@@ -21,7 +21,7 @@ var seattleStand = {
   render: function() {
     for (var i = 0; i < this.shopHours.length; i++){
       var childEl1 = document.createElement('li');
-      childEl1.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in Seattle`;
+      childEl1.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in ${this.locationName}`;
       parentEl.appendChild(childEl1);
     }
     
@@ -42,7 +42,7 @@ var tokyoStand = {
   render :function() {
     for (var i = 0; i < this.shopHours.length; i++) {
       var childEl2 = document.createElement('li');
-      childEl2.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in Tokyo`;
+      childEl2.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in ${this.locationName}`;
       parentEl.appendChild(childEl2);
     }
   }
@@ -62,9 +62,29 @@ var dubaiStand = {
   render: function () {
     for (var i = 0; i < this.shopHours.length; i++) {
       var childEl3 = document.createElement('li');
-      childEl3.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in Dubai`;
+      childEl3.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in${this.locationName}`;
       parentEl.appendChild(childEl3);
     }
   }
 }
 dubaiStand.render();
+
+var parisStand = {
+  shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
+  hoursTotal: function getRandom(num) {
+    var totalSales = [];
+    for (var i = 0; i < this.shopHours.length; i++) {
+      totalSales.push(Math.floor(Math.random() * Math.floor(num)));
+      return totalSales[i];
+    }
+  },
+  locationName: 'Paris',
+  render: function () {
+    for (var i = 0; i < this.shopHours.length; i++) {
+      var childEl3 = document.createElement('li');
+      childEl3.textContent = `${this.shopHours[i]} ${this.hoursTotal(50)} cookies in ${this.locationName}`;
+      parentEl.appendChild(childEl3);
+    }
+  }
+}
+parisStand.render();
