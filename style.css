@@ -8,29 +8,47 @@ h1 {
   color: #a55364;
 }
 h2 {
-  color: dimgray;
+  color: white;
   font-family: 'Spectral', serif;
-  font-size: 100% !important;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #9099A2
+}
+#headline {
+  font-size: 200%;
+  padding: 30px;
   text-align: center;
 }
-
+#sales-page {
+  width: 35%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 p {
+  font-family: 'Spectral', serif;
+  font-weight: 500;
   background-color: #9099A2;
+  color: white;
   padding: 10px;
-  
+  text-align: center;
 }
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
-#parentElement > li {
+article {
+  display: inline-block;
+  width: 18.2%;
+  padding: 10px;
+}
+article > li {
   color: salmon;
   background-color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  /* width: 31.3% */
+  padding-top: 20px;
 }
 #parentElement > li {
   padding-top: 20px;
