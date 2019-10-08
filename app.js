@@ -1,6 +1,6 @@
 'use strict';
 var parentEl = document.getElementById('parentElement');
-parentEl.textContent = 'Salmon Cookie Sales';
+// parentEl.textContent = 'Salmon Cookie Sales';
 
 var child1 = document.createElement('h1');
 child1.textContent = 'We Sell Cookies!';
