@@ -15,6 +15,20 @@ h2 {
   text-transform: uppercase;
   background-color: #9099A2
 }
+td, th {
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 18px;
+}
+#tableElement {
+  text-align: center;
+  margin-left: 200px;
+}
+#tableElement > tr, 
+#tableElement > th {
+  font-family: 'Spectral', serif;
+  font-weight: bold;
+}
 #headline {
   font-size: 200%;
   padding: 30px;
