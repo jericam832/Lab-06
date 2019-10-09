@@ -2,6 +2,7 @@
 body {
   background-color: whitesmoke;
 }
+
 h1 {
   font-family: 'Shrikhand', cursive;
   text-align: center;
@@ -16,14 +17,17 @@ h2 {
   background-color: #9099A2
 }
 td, th {
-  border: 1px solid #a55364;
+  border: 1.5px solid #a55364;
 }
-
+table{
+  margin-bottom: 25px;
+}
 td, th {
   color: salmon;
   background-color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -31,7 +35,8 @@ th,
 #tableElement > tr:nth-child(1) > td {
   color: #a55364;
   font-family: 'Spectral', serif;
-  padding: 10px;
+  padding: 5px 10px 0 5px;
+  font-size: 1.2em;
 
 }
 #tableElement {
@@ -74,13 +79,14 @@ article {
   width: 18.2%;
   padding: 10px;
 }
-article > li {
-  color: salmon;
-  background-color: white;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  padding-top: 20px;
-}
-#parentElement > li {
-  padding-top: 20px;
+
+#tableElement > tr > td,
+#tableElement > td:nth-child(19),
+#tableElement > td:nth-child(37),
+#tableElement > td:nth-child(55),
+#tableElement > td:nth-child(73), 
+#tableElement > td:nth-child(91) {
+  color: #a55364;
+  font-family: 'Spectral', serif;
+  font-weight: bold;
 }
