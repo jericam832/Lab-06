@@ -16,13 +16,27 @@ h2 {
   background-color: #9099A2
 }
 td, th {
-  border: 1px solid black;
-  padding: 5px;
-  font-size: 18px;
+  border: 1px solid #a55364;
+}
+
+td, th {
+  color: salmon;
+  background-color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+th,
+#tableElement > tr:nth-child(1) > td {
+  color: #a55364;
+  font-family: 'Spectral', serif;
+  padding: 10px;
+
 }
 #tableElement {
   text-align: center;
-  margin-left: 200px;
+  margin: 0 auto;
 }
 #tableElement > tr, 
 #tableElement > th {
