@@ -35,13 +35,14 @@ th,
 #tableElement > tr:nth-child(1) > td {
   color: #a55364;
   font-family: 'Spectral', serif;
-  padding: 5px 10px 0 5px;
-  font-size: 1.2em;
+  padding: 5px 10px 5px 5px;
+  font-size: 1em;
+  text-transform: uppercase
 
 }
 #tableElement {
   text-align: center;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 #tableElement > tr, 
 #tableElement > th {
@@ -89,4 +90,33 @@ article {
   color: #a55364;
   font-family: 'Spectral', serif;
   font-weight: bold;
+}
+/* form styling */
+input {
+  display: block;
+}
+#new-stand {
+  
+  background: white;
+  margin: 0 auto;
+  /* width: 50%; */
+}
+/* fieldset {
+  width: 350px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  text-align: right;
+  padding: 20px;
+} */
+/* legend {
+  background-color: #efefef;
+  border: 1px solid #a55364;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: left;
+  text-transform: uppercase;
+} */
+
+#tableElement > tr:nth-child(92) {
+  color: black;
 }

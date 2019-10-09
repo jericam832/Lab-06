@@ -18,6 +18,23 @@
   </header>
   <main>
     <table id="tableElement"></table>
+    <div id="form-section">
+      <form id="new-stand">
+        <p>Add A New Cookie Stand</p>
+        <fieldset>
+          <legend for="location">Location</legend>
+          <input type="text" id="location" placeholder="Enter a location..." required="required">
+          <legend for="minCustomer">Minimum Number of Customers</legend>
+          <input type="number" id="minCust" placeholder="Enter number..." required="required">
+          <legend for="maxCustomer">Maximum Number of Customers</legend>
+          <input type="number" id="maxCust" placeholder="Enter number..." required="required">
+          <legend for="avgSoldPerHour">Average Sale Per Customer</legend>
+          <input type="number" id="avgSale" placeholder="Enter average..." required="required">
+          <button value="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    
   </main>
   <script src="app.js"></script>
 </body>
