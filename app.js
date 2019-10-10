@@ -3,26 +3,23 @@ var tableBody = document.getElementById('tableElement');
 CookieStand.shopHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'];
 CookieStand.allLocations = [];
 CookieStand.locationHourlyTotals = [];
-
 var renderHeaderRow = function(){
-  var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Location';
-  trEl.appendChild(thEl);
+  var tableRowEl = document.createElement('tr');
+  var tableHeadEl = document.createElement('th');
+  tableHeadEl.textContent = 'Location';
+  tableRowEl.appendChild(tableHeadEl);
   
   for (var i = 0; i < CookieStand.shopHours.length; i++) {
-    var tdEl = document.createElement('td');
-    tdEl.textContent = CookieStand.shopHours[i];
-    trEl.appendChild(tdEl);
+    var tableDataEl = document.createElement('td');
+    tableDataEl.textContent = CookieStand.shopHours[i];
+    tableRowEl.appendChild(tableDataEl);
   }
-  tableBody.appendChild(trEl);
+  tableBody.appendChild(tableRowEl);
   tableBody.setAttribute('style', 'background-color: #6D7993;');
   var totalTh = document.createElement('th');
   totalTh.textContent = 'Daily Total';
-  trEl.appendChild(totalTh);
-  trEl.setAttribute('id', 'headerRow');
-  
-
+  tableRowEl.appendChild(totalTh);
+  tableRowEl.setAttribute('id', 'headerRow');
 };
 renderHeaderRow();
 
@@ -38,7 +35,6 @@ function CookieStand(location, minCustomers, maxCustomers, avgSalePerCustomer) {
   CookieStand.allLocations.push(this);
   this.randomCustomers();
   this.render();
-  
 }
 
 CookieStand.prototype.randomCustomers = function() {
@@ -51,21 +47,21 @@ CookieStand.prototype.randomCustomers = function() {
 CookieStand.prototype.render = function() {
   var totalPerDay = 0;
   // var hourlyGrandtotal = 0;
-  var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
+  var tableRowEl = document.createElement('tr');
+  var tableHeadEl = document.createElement('th');
   var hourlyTotalTh = document.createElement('td');
   hourlyTotalTh.textContent = 'Total: ';
-  trEl.appendChild(thEl);
-  tableBody.appendChild(trEl);
-  thEl.textContent = `${this.location}`;
-  tableBody.appendChild(thEl);
+  tableRowEl.appendChild(tableHeadEl);
+  tableBody.appendChild(tableRowEl);
+  tableHeadEl.textContent = `${this.location}`;
+  tableBody.appendChild(tableHeadEl);
 
   for (var i = 0; i < CookieStand.shopHours.length; i++) {
-    var tdEl = document.createElement('td');
+    var tableDataEl = document.createElement('td');
     var totalPerHour = Math.floor(this.totalCustomers[i] * this.avgSalePerCustomer);
     totalPerDay += totalPerHour;
-    tdEl.textContent = `${totalPerHour}`;
-    tableBody.appendChild(tdEl);
+    tableDataEl.textContent = `${totalPerHour}`;
+    tableBody.appendChild(tableDataEl);
     this.hourlyTotal.push(totalPerHour);
   }
   this.locationTotal = totalPerDay;
@@ -76,33 +72,33 @@ CookieStand.prototype.render = function() {
 };
 
 var renderFooterRow = function () {
-  var trEl = document.createElement('tr');
+  var tableRowEl = document.createElement('tr');
   var tfEl = document.createElement('th');
-  var tdEl = document.createElement('td');
+  var tableDataEl = document.createElement('td');
   tfEl.textContent = 'Total: ';
   tfEl.setAttribute('id', 'footer-totals')
-  trEl.appendChild(tfEl);
-  trEl.setAttribute('id', 'totalRow'); //identify the total row/footer
+  tableRowEl.appendChild(tfEl);
+  tableRowEl.setAttribute('id', 'totalRow'); //identify the total row/footer
   
   var grandTotal = 0;
   for (var j = 0; j < CookieStand.shopHours.length; j++) {
     var total = 0;
-    var tdEl = document.createElement('td');
+    var tableDataEl = document.createElement('td');
     for (var i = 0; i < CookieStand.allLocations.length; i++) {
       total += CookieStand.allLocations[i].hourlyTotal[j];
       CookieStand.locationHourlyTotals.push(total);
     }
-    tdEl.textContent = total;
-    trEl.appendChild(tdEl);
+    tableDataEl.textContent = total;
+    tableRowEl.appendChild(tableDataEl);
     
     grandTotal += total; //total for all locations for every hour
   }
   // console.log(grandTotal);
-  tableBody.appendChild(trEl);
-  var tdEl = document.createElement('td');
-  tdEl.textContent = `${grandTotal}`;
-  tdEl.setAttribute('id', 'grand-total');
-  trEl.appendChild(tdEl);
+  tableBody.appendChild(tableRowEl);
+  var tableDataEl = document.createElement('td');
+  tableDataEl.textContent = `${grandTotal}`;
+  tableDataEl.setAttribute('id', 'grand-total');
+  tableRowEl.appendChild(tableDataEl);
 };
   
 new CookieStand('Seattle', 23, 65, 6.3);
@@ -127,5 +123,4 @@ function handleSubmit(event) {
   renderFooterRow(); //render the new total row with the new location
   userForm.reset();//clear form after submit
 };
-
-renderFooterRow();
+renderFooterRow(); 
