@@ -78,7 +78,7 @@ var renderFooterRow = function () {
   tfEl.textContent = 'Total: ';
   tfEl.setAttribute('id', 'footer-totals')
   trEl.appendChild(tfEl);
-  trEl.setAttribute('id', 'totalRow');
+  trEl.setAttribute('id', 'totalRow'); //identify the total row/footer
   
   var grandTotal = 0;
   for (var j = 0; j < CookieStand.shopHours.length; j++) {
@@ -91,7 +91,7 @@ var renderFooterRow = function () {
     tdEl.textContent = total;
     trEl.appendChild(tdEl);
     
-    grandTotal += total;
+    grandTotal += total; //total for all locations for every hour
   }
   // console.log(grandTotal);
   tableBody.appendChild(trEl);
@@ -99,8 +99,6 @@ var renderFooterRow = function () {
   tdEl.textContent = `${grandTotal}`;
   tdEl.setAttribute('id', 'grand-total');
   trEl.appendChild(tdEl);
- 
-  // tableBody.appendChild(trEl);
 };
   
 new CookieStand('Seattle', 23, 65, 6.3);
@@ -115,15 +113,15 @@ userForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   // console.log('event.target.location.value', event.target.location.value);
+  //hide the initial total row 
   var hideTotals = document.getElementById('totalRow').setAttribute('style', 'display:none;');
-
   var location = event.target.location.value
   var minCustomer = event.target.minCust.value
   var maxCustomer = event.target.maxCust.value
   var avgPerCustomer = event.target.avgSale.value
 
   new CookieStand(location, minCustomer, maxCustomer, avgPerCustomer);
-  renderFooterRow();
+  renderFooterRow(); //render the new total row with the new location
   userForm.reset();//clear form after submit
 };
 
