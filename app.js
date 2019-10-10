@@ -123,11 +123,6 @@ function handleSubmit(event) {
   var minCustomer = event.target.minCust.value
   var maxCustomer = event.target.maxCust.value
   var avgPerCustomer = event.target.avgSale.value
-  //form validations
-  if (isNaN(minCust)) {
-    alert('Please enter a number');
-    event.target.minCust.value = null;
-  }
   new CookieStand(location, minCustomer, maxCustomer, avgPerCustomer);
   renderFooterRow(); //render the new total row with the new location
   userForm.reset();//clear form after submit
