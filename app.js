@@ -9,16 +9,20 @@ var renderHeaderRow = function(){
   var thEl = document.createElement('th');
   thEl.textContent = 'Location';
   trEl.appendChild(thEl);
-
+  
   for (var i = 0; i < CookieStand.shopHours.length; i++) {
     var tdEl = document.createElement('td');
     tdEl.textContent = CookieStand.shopHours[i];
     trEl.appendChild(tdEl);
   }
   tableBody.appendChild(trEl);
+  tableBody.setAttribute('style', 'background-color: #6D7993;');
   var totalTh = document.createElement('th');
   totalTh.textContent = 'Daily Total';
   trEl.appendChild(totalTh);
+  trEl.setAttribute('id', 'headerRow');
+  
+
 };
 renderHeaderRow();
 
@@ -113,13 +117,17 @@ userForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   // console.log('event.target.location.value', event.target.location.value);
-  //hide the initial total row 
+  //hide the initial footer row 
   var hideTotals = document.getElementById('totalRow').setAttribute('style', 'display:none;');
   var location = event.target.location.value
   var minCustomer = event.target.minCust.value
   var maxCustomer = event.target.maxCust.value
   var avgPerCustomer = event.target.avgSale.value
-
+  //form validations
+  if (isNaN(minCust)) {
+    alert('Please enter a number');
+    event.target.minCust.value = null;
+  }
   new CookieStand(location, minCustomer, maxCustomer, avgPerCustomer);
   renderFooterRow(); //render the new total row with the new location
   userForm.reset();//clear form after submit
