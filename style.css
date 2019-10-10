@@ -7,7 +7,8 @@ main {
 h1 {
   font-family: 'Shrikhand', cursive;
   text-align: center;
-  color: #a55364;
+  color: salmon;
+  text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 #backButton {
   padding: 10px;
@@ -54,14 +55,20 @@ h2 {
   text-transform: uppercase;
   background-color: #9099A2
 }
-td, th {
-  border: 1.5px solid #dddddd;
+td {
+  border-top: 1.5px solid #9099A2;
+  border-bottom: 1.5px solid #9099A2;
   padding: 8px;
+}
+th {
+  padding: 9px;
 }
 table {
   margin-bottom: 50px;
   border-collapse: collapse;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  overflow: scroll;
 }
 #table-title {
   text-align: left;
@@ -82,7 +89,10 @@ td, th {
   padding-bottom: 10px;
 }
 td { 
- background-color: whitesmoke;
+ background-color: #ddd;
+}
+td:nth-child(odd) {
+  background-color: white;
 }
 td:hover {
   background-color: white;
@@ -111,12 +121,10 @@ th,
   font-size: 200%;
   padding: 30px;
   text-align: center;
-  color: #a55364;
+  color: salmon;
 }
 #sales-page {
   width: 35%;
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 a {
   color: #a55364;
@@ -130,13 +138,15 @@ p {
   text-align: center;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-
 }
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 75px;
+  background-color: salmon;
+  border-radius: 50%;
+  padding: 25px;
 }
 /* total cell font color */
 #tableElement > tr > td,
@@ -157,7 +167,6 @@ input {
   padding: 10px;
   font-size: 1em;
   border-radius: 4px;
-  
 }
 #new-stand {
   background: #a55364;
@@ -194,10 +203,12 @@ label {
 }
 
 footer {
+  width: 100%;
   left: 0;
   bottom: 0;
+  position: relative;
   background-color: #a55364;
-  margin-top: 50px;
+  margin-top: 110px;
 }
 body > footer,
 body > footer > a {

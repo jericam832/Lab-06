@@ -113,14 +113,16 @@ userForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   // console.log('event.target.location.value', event.target.location.value);
-  //hide the initial footer row 
-  var hideTotals = document.getElementById('totalRow').setAttribute('style', 'display:none;');
   var location = event.target.location.value
   var minCustomer = event.target.minCust.value
   var maxCustomer = event.target.maxCust.value
   var avgPerCustomer = event.target.avgSale.value
-  new CookieStand(location, minCustomer, maxCustomer, avgPerCustomer);
-  renderFooterRow(); //render the new total row with the new location
+  // hideTotals.setAttribute('style', 'display: none;');
+  //delete the initial footer row 
+  tableBody.deleteRow(-1);
+  new CookieStand(location, +minCustomer, +maxCustomer, +avgPerCustomer);
   userForm.reset();//clear form after submit
+    //render the new total row with the new location
+  renderFooterRow(); 
 };
 renderFooterRow(); 
