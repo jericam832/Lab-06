@@ -2,7 +2,7 @@ body {
   background-color: white;
 }
 main {
-  height: 100vh;
+  height: 120vh;
 }
 h1 {
   font-family: 'Shrikhand', cursive;
@@ -19,6 +19,7 @@ h1 {
   border: 2px solid #a55364;
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
@@ -37,7 +38,7 @@ h1 {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.5em;
   text-decoration: none;
-   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
@@ -60,6 +61,7 @@ td, th {
 table {
   margin-bottom: 50px;
   border-collapse: collapse;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 #table-title {
   text-align: left;
@@ -155,6 +157,7 @@ input {
   padding: 10px;
   font-size: 1em;
   border-radius: 4px;
+  
 }
 #new-stand {
   background: #a55364;
@@ -162,6 +165,7 @@ input {
   width: 500px;
   border-radius: 4px;
   margin-bottom: 25px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 fieldset {
   width: 87%;
