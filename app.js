@@ -90,7 +90,6 @@ var renderFooterRow = function () {
     }
     tableDataEl.textContent = total;
     tableRowEl.appendChild(tableDataEl);
-    
     grandTotal += total; //total for all locations for every hour
   }
   // console.log(grandTotal);
@@ -100,7 +99,6 @@ var renderFooterRow = function () {
   tableDataEl.setAttribute('id', 'grand-total');
   tableRowEl.appendChild(tableDataEl);
 };
-  
 new CookieStand('Seattle', 23, 65, 6.3);
 new CookieStand('Tokyo', 3, 24, 1.2);
 new CookieStand('Dubai', 11, 38, 3.7);
@@ -117,12 +115,11 @@ function handleSubmit(event) {
   var minCustomer = event.target.minCust.value
   var maxCustomer = event.target.maxCust.value
   var avgPerCustomer = event.target.avgSale.value
-  // hideTotals.setAttribute('style', 'display: none;');
   //delete the initial footer row 
   tableBody.deleteRow(-1);
   new CookieStand(location, +minCustomer, +maxCustomer, +avgPerCustomer);
   userForm.reset();//clear form after submit
-    //render the new total row with the new location
+  //render the new total row with the new location
   renderFooterRow(); 
 };
 renderFooterRow(); 
