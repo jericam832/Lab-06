@@ -11,30 +11,41 @@
 </head>
 <body>
   <header>
-    <!-- <div class="picture">
-      <h1 id="title">Pat's Salmon Cookie Stand <i class="fas fa-cookie-bite"></i></h1>
-      <img href="index.html"id="sales-page" src="img/salmon.png" alt="UglyFish">
-      <h1 id="headline">We Sell <i class="fas fa-fish"></i> Cookies</h1> 
-    </div> --> 
+    <div>
+      <p id="title"><i class="fas fa-cookie-bite"></i> Pat's Cookie Stand</p>
+      <p id="small">We Sell Fish Cookies</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <h1 id="table-title"><i class="far fa-chart-bar"></i> Daily Metrics</h1><h1><a id="backButton" href="index.html">Go Back</a></h1>
+  <main class="salesPage">
+    <h1 id="table-title"><i class="far fa-chart-bar"></i> Daily Metrics</h1>
     <table id="tableElement"></table>
-    <div id="form-section">
-      <form id="new-stand">
-        <p>Add A New Cookie Stand</p>
-        <fieldset>
-          <label for="location">Location</label>
-          <input type="text" id="location" placeholder="Enter a new location..." required="required" minlength="6" maxlength="16">
-          <label for="minCustomer" >Min Number of Customers</label>
-          <input type="number" id="minCust"  min="1" max="300"placeholder="Enter a number..." required="required">
-          <label for="maxCustomer">Max Number of Customers</label>
-          <input type="number" id="maxCust" min="1" max="500" placeholder="Enter a number..." required="required">
-          <label for="avgSoldPerHour">Average Sale Per Customer</label>
-          <input type="number" id="avgSale"  min="1" max="10"placeholder="Enter average customer sales..." required="required">
-          <button value="submit" id="submitButton">Submit</button>
-        </fieldset>
-      </form>
+    <div class="wrapper" id="sales-wrapper">
+      <div id="form-section">
+          <form id="new-stand">
+            <legend>Add A New Cookie Stand</legend>
+            <fieldset>
+              <label for="location">Location</label>
+              <input type="text" id="location" placeholder="Enter a new location..." required="required" minlength="6"
+                maxlength="16">
+              <label for="minCustomer">Min Number of Customers</label>
+              <input type="number" id="minCust" min="1" max="300" placeholder="Enter a number..." required="required">
+              <label for="maxCustomer">Max Number of Customers</label>
+              <input type="number" id="maxCust" min="1" max="500" placeholder="Enter a number..." required="required">
+              <label for="avgSoldPerHour">Average Sale Per Customer</label>
+              <input type="number" id="avgSale" min="1" max="10" placeholder="Enter average customer sales..."
+                required="required">
+              <button value="submit" id="submitButton">Submit</button>
+            </fieldset>
+          </form>
+      </div>
+      <div id="sales-image">
+        <img src="img/salmon.png" alt="UglyFish">
+      </div>
     </div>
   </main>
   <footer>
