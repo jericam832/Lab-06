@@ -1,13 +1,45 @@
 body {
-  background-color: white;
+  background-color: whitesmoke;
+  margin: 0px;
+}
+#title {
+  margin: 0px;
+  background-color: none;
+  text-align: left;
+  padding: 15px 0 0 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.25em;
+}
+#small {
+  text-align: left;
+  padding-left: 45px;
+  margin: 0px;
+}
+header {
+  background-color: #a55364;
+  color: white;
+  height: 100px;
+  
+}
+nav {
+  /* background-color: #a5; */
+  /* padding: 5px; */
 }
 main {
-  height: 120vh;
+  max-width: 960px;
+  margin: 50px auto;
+  background-color: #a55364;
+  padding: 20px;
 }
+nav ul {
+  margin: 0px;
+  padding: 5px 0px 5px 30px;}
 h1 {
   font-family: 'Shrikhand', cursive;
+  font-weight: normal;
   text-align: center;
-  color: salmon;
+  color: white;
   text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 #backButton {
@@ -28,8 +60,43 @@ h1 {
   background-color: #a55364;
   color: white;
 }
+.address-list::after {
+  margin-top: 70px;
+  content: "";
+  clear: both;
+  display: table;
+}
+address {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+img {
+  /* padding: 15px; */
+  width: 300px;
+}
+article {
+  color: white;
+  float: left;
+  width: 33.3%;
+  /* padding: 5px; */
+  margin-top: 25px;
+}
+.picture{
+  padding: 40px;
+}
+div.picture > img {
+  margin: 0 auto;
+  width: 100%;
+  /* padding: 20px; */
+}
+.locationName {
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-family: 'Spectral', serif;
+}
 #sales {
-  padding: 15px;
+  /* padding: 15px;
   color: salmon;
   background: white;
   margin-top: 25px;
@@ -38,10 +105,10 @@ h1 {
   border-radius: 4px;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.5em;
-  text-decoration: none;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none; */
+  box-shadow: 0px 8px 15px /rgba(0, 0, 0, 0.1);
   -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+  /* transition-duration: 0.4s; */
 }
 #sales:hover {
   background-color: salmon;
@@ -113,10 +180,7 @@ th,
 #tableElement > tr:nth-child(even) {
   background-color: #dddddd;
 }
-#title {
-  padding-top: 50px;
-  font-size: 2.5em;
-}
+
 #headline {
   font-size: 200%;
   padding: 30px;
@@ -129,7 +193,7 @@ th,
 a {
   color: #a55364;
 }
-p {
+/* p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   background-color: salmon;
@@ -138,16 +202,8 @@ p {
   text-align: center;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-}
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 75px;
-  background-color: salmon;
-  border-radius: 50%;
-  padding: 25px;
-}
+} */
+
 /* total cell font color */
 #tableElement > tr > td,
 #tableElement > td:nth-child(19),
@@ -203,6 +259,7 @@ label {
 }
 
 footer {
+  clear: both;
   width: 100%;
   left: 0;
   bottom: 0;

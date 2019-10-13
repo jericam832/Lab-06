@@ -3,12 +3,12 @@ var tableBody = document.getElementById('tableElement');
 CookieStand.shopHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'];
 CookieStand.allLocations = [];
 CookieStand.locationHourlyTotals = [];
+
 var renderHeaderRow = function(){
   var tableRowEl = document.createElement('tr');
   var tableHeadEl = document.createElement('th');
   tableHeadEl.textContent = 'Location';
   tableRowEl.appendChild(tableHeadEl);
-  
   for (var i = 0; i < CookieStand.shopHours.length; i++) {
     var tableDataEl = document.createElement('td');
     tableDataEl.textContent = CookieStand.shopHours[i];
@@ -17,7 +17,7 @@ var renderHeaderRow = function(){
   tableBody.appendChild(tableRowEl);
   tableBody.setAttribute('style', 'background-color: #6D7993;');
   var totalTh = document.createElement('th');
-  totalTh.textContent = 'Daily Total';
+  totalTh.textContent = 'Daily Totals';
   tableRowEl.appendChild(totalTh);
   tableRowEl.setAttribute('id', 'headerRow');
 };
@@ -76,10 +76,10 @@ var renderFooterRow = function () {
   var tfEl = document.createElement('th');
   var tableDataEl = document.createElement('td');
   tfEl.textContent = 'Total: ';
-  tfEl.setAttribute('id', 'footer-totals')
+  tfEl.setAttribute('id', 'footer-totals');
   tableRowEl.appendChild(tfEl);
   tableRowEl.setAttribute('id', 'totalRow'); //identify the total row/footer
-  
+
   var grandTotal = 0;
   for (var j = 0; j < CookieStand.shopHours.length; j++) {
     var total = 0;
@@ -111,15 +111,15 @@ userForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   // console.log('event.target.location.value', event.target.location.value);
-  var location = event.target.location.value
-  var minCustomer = event.target.minCust.value
-  var maxCustomer = event.target.maxCust.value
-  var avgPerCustomer = event.target.avgSale.value
-  //delete the initial footer row 
+  var location = event.target.location.value;
+  var minCustomer = event.target.minCust.value;
+  var maxCustomer = event.target.maxCust.value;
+  var avgPerCustomer = event.target.avgSale.value;
+  //delete the initial footer row
   tableBody.deleteRow(-1);
   new CookieStand(location, +minCustomer, +maxCustomer, +avgPerCustomer);
   userForm.reset();//clear form after submit
   //render the new total row with the new location
-  renderFooterRow(); 
-};
-renderFooterRow(); 
+  renderFooterRow();
+}
+renderFooterRow();
